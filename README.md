@@ -100,7 +100,7 @@ cat /proc/version
 将本脚本下载至Server、Client1和Client2：
 
 ```shell
-git clone git@github.com:Cocean001/ngrok_install.git
+wget --no-check-certificate https://raw.githubusercontent.com/Cocean001/ngrok_install/master/ngrok_install/ngrok_install.sh -O ngrok_install.sh
 chmod +x ngrok_install.sh
 ```
 
