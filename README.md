@@ -97,6 +97,12 @@ wget --no-check-certificate https://raw.githubusercontent.com/Cocean001/ngrok_in
 wget https://gitee.com/cocean001/ngrok_install/raw/master/ngrok_install.sh -O ngrok_install.sh && chmod +x ngrok_install.sh
 ```
 
+
+English user could use this command to run the script of English version
+``` shell
+wget wget https://gitee.com/cocean001/ngrok_install/raw/master/ngrok_install_en.sh -O ngrok_install.sh && chmod +x ngrok_install.sh
+```
+
 ### 运行
 
 ```shell
