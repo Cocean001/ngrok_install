@@ -100,7 +100,7 @@ wget https://gitee.com/cocean001/ngrok_install/raw/master/ngrok_install.sh -O ng
 
 English user could use this command to run the script of English version
 ``` shell
-wget wget https://gitee.com/cocean001/ngrok_install/raw/master/ngrok_install_en.sh -O ngrok_install.sh && chmod +x ngrok_install.sh
+wget https://gitee.com/cocean001/ngrok_install/raw/master/ngrok_install_en.sh -O ngrok_install.sh && chmod +x ngrok_install.sh
 ```
 
 ### 运行
