@@ -873,6 +873,7 @@ apt_update
 check_go
 check_domain
 check_git_clone
+git config --global http.sslverify false 
 
 #安装ngrokd，输入ngrokd域名，此处可能要添加一个域名解析
 echo "[ * ] 即将安装ngrokd服务端"
@@ -1149,7 +1150,7 @@ esac
 if [ ! -p "/opt/ngrok" ]; then
     # echo "[ * ] 正在创建默认文件夹/opt/ngrok"
     mkdir -p /opt/ngrok_client/linux_amd64 >/dev/null 2>&1
-    mkdir -p /opt/ngrok_client/linux_arm64 >/dev/null 2>&1
+    # mkdir -p /opt/ngrok_client/linux_arm64 >/dev/null 2>&1
     mkdir -p /opt/ngrok_client/linux_arm32 >/dev/null 2>&1
     mv /usr/local/ngrok/bin/linux_386 /opt/ngrok_client/linux_amd32/ >/dev/null 2>&1 # linux amd 32
     mv /usr/local/ngrok/bin/ngrok /opt/ngrok_client/linux_amd64/ngrok >/dev/null 2>&1 # linux amd 64
@@ -1158,7 +1159,7 @@ if [ ! -p "/opt/ngrok" ]; then
     cp -r /usr/local/ngrok/bin/darwin_386 /opt/ngrok_client >/dev/null 2>&1 # macos 32
     cp -r /usr/local/ngrok/bin/darwin_amd64 /opt/ngrok_client >/dev/null 2>&1 # macos 64
     cp -r /usr/local/ngrok/bin/linux_arm/ngrok /opt/ngrok_client/linux_arm32 >/dev/null 2>&1 # linux arm 32
-    cp /usr/local/ngrok/bin/ngrok /opt/ngrok_client/linux_arm64 >/dev/null 2>&1 # linux arm 64
+    cp -r /usr/local/ngrok/bin/linux_arm64 /opt/ngrok_client/ >/dev/null 2>&1 # linux arm 64
     green "[ √ ] 客户端已存入/opt/ngrok_client文件夹，编译完成"
 else
     echo "[ * ] 默认文件夹/opt/ngrok已存在，将创建存储目录/opt/$ngrok_date"
@@ -1172,7 +1173,7 @@ else
     cp -r /usr/local/ngrok/bin/darwin_386 /opt/$ngrok_date >/dev/null 2>&1 # macos 32
     cp -r /usr/local/ngrok/bin/darwin_amd64 /opt/$ngrok_date >/dev/null 2>&1 # macos 64
     cp -r /usr/local/ngrok/bin/linux_arm/ngrok /opt/$ngrok_date/linux_arm32 >/dev/null 2>&1 # linux arm 32
-    cp /usr/local/ngrok/bin/ngrok /opt/$ngrok_date/linux_arm64 >/dev/null 2>&1 # linux arm 64
+    cp /usr/local/ngrok/bin/linux_arm64 /opt/$ngrok_date/ >/dev/null 2>&1 # linux arm 64
     yellow "[ - ] 默认文件夹/opt/ngrok已存在"
     green "[ √ ] 客户端已存入/opt/$ngrok_date文件夹，编译完成"
 fi
