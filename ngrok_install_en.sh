@@ -873,6 +873,7 @@ apt_update
 check_go
 check_domain
 check_git_clone
+git config --global http.sslverify false 
 
 echo "[ * ] Start install Ngrok Server"
 bar_start_from 0
@@ -1161,7 +1162,7 @@ if [ ! -p "/opt/ngrok" ]; then
     cp -r /usr/local/ngrok/bin/darwin_386 /opt/ngrok_client >/dev/null 2>&1 # macos 32
     cp -r /usr/local/ngrok/bin/darwin_amd64 /opt/ngrok_client >/dev/null 2>&1 # macos 64
     cp -r /usr/local/ngrok/bin/linux_arm/ngrok /opt/ngrok_client/linux_arm32 >/dev/null 2>&1 # linux arm 32
-    cp /usr/local/ngrok/bin/ngrok /opt/ngrok_client/linux_arm64 >/dev/null 2>&1 # linux arm 64
+    cp -r /usr/local/ngrok/bin/linux_arm64 /opt/ngrok_client/ >/dev/null 2>&1 # linux arm 64
     green "[ √ ] Make done! Client Program File has been moved to /opt/ngrok_client"
 else
     echo "[ * ] Default dictionary exists: /opt/ngrok. Client program will be moved to /opt/$ngrok_date"
@@ -1175,7 +1176,7 @@ else
     cp -r /usr/local/ngrok/bin/darwin_386 /opt/$ngrok_date >/dev/null 2>&1 # macos 32
     cp -r /usr/local/ngrok/bin/darwin_amd64 /opt/$ngrok_date >/dev/null 2>&1 # macos 64
     cp -r /usr/local/ngrok/bin/linux_arm/ngrok /opt/$ngrok_date/linux_arm32 >/dev/null 2>&1 # linux arm 32
-    cp /usr/local/ngrok/bin/ngrok /opt/$ngrok_date/linux_arm64 >/dev/null 2>&1 # linux arm 64
+    cp /usr/local/ngrok/bin/linux_arm64 /opt/$ngrok_date/ >/dev/null 2>&1 # linux arm 64
     green "[ √ ] Make done! Client Program File has been moved to /opt/$ngrok_date"
 fi
 green "[ √ ] Client Making Complete!"
